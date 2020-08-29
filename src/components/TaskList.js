@@ -7,11 +7,15 @@ function TaskList() {
 
     return (
         <div>
-            <ul>
-                {tasks.map(task => {
-                    return  <Task  />
-                })}
-            </ul>
+            {tasks.length ? (
+                <ul>
+                    {tasks.map(task => {
+                        return  <Task task={task} key={task.id} />
+                    })}
+                </ul>
+            ) : (
+                <div>No Tasks</div>
+            )}
         </div>
     )
 }
